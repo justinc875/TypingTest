@@ -27,7 +27,7 @@ public class TypeTest {
         return 0.0;
     }
 
-    
+
 
 }
 
