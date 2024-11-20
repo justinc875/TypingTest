@@ -15,7 +15,13 @@ public class TypeTestLogic {
     //game loop
     public void start() {
         System.out.println("Welcome to the TypingTest");
-
     }
+
+    //helper methods
+    public void getInfo() {
+        System.out.println("type something: ");
+        info = scan.nextLine();
+    }
+
 
 }
