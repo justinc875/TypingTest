@@ -23,7 +23,17 @@ public class TypeTest {
 
     //calculate accuracy
     public double accuracy() {
-        return 0.0;
+        int wrongCharacters = 0;
+        int rightCharacters = 0;
+        for(int i = 0; i < userInput.length(); i++) {
+            if (userInput.substring(i, i + 1).equals(typeTest.substring(i, i + 1))) {
+                rightCharacters++;
+            } else {
+                wrongCharacters ++;
+            }
+        }
+        double sum = rightCharacters + wrongCharacters;
+        return rightCharacters/sum;
     }
 
     //calculate raw wpm
