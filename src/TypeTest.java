@@ -11,7 +11,11 @@ public class TypeTest {
         this.typeTest = typeTest;
         this.userInput = userInput;
     }
-    //helper classes
+
+
+    //public classes
+
+
     //calculate wpm
     public double wpm() {
         return 0.0;
@@ -28,6 +32,8 @@ public class TypeTest {
 
         return 0.0;
     }
+
+    //private helper classes
 
 
 
