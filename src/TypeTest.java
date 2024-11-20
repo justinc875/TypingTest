@@ -3,26 +3,42 @@ public class TypeTest {
     double timer;
     String typeTest;
     String userInput;
-
+    int rightCharacters;
+    int wrongCharacters;
+    double accuracy;
 
     //constructor
     public TypeTest(double timer, String typeTest) {
         this.timer = timer;
         this.typeTest = typeTest;
         this.userInput = userInput;
+        accuracy = 0;
+        rightCharacters = 0;
+        wrongCharacters = 0;
     }
 
+    //getters and setters;
 
-    //public classes
-
+    //calculate raw wpm
+    public double rawWPM() {
+        int length = userInput.length();
+         return ((double) length / 5) / timer;
+    }
 
     //calculate wpm
     public double wpm() {
-        return 0.0;
+        getCharacters();
+        return (rightCharacters / 5) / timer;
     }
 
-    //calculate accuracy
     public double accuracy() {
+        getCharacters();
+        return (double) rightCharacters / (rightCharacters + wrongCharacters);
+    }
+
+
+    //private helper classes
+    private void getCharacters() {
         int wrongCharacters = 0;
         int rightCharacters = 0;
         for(int i = 0; i < userInput.length(); i++) {
@@ -32,18 +48,7 @@ public class TypeTest {
                 wrongCharacters ++;
             }
         }
-        double sum = rightCharacters + wrongCharacters;
-        return rightCharacters/sum;
     }
-
-    //calculate raw wpm
-    public double rawWPM() {
-
-        return 0.0;
-    }
-
-    //private helper classes
-
 
 
 }
