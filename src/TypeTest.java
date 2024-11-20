@@ -23,7 +23,6 @@ public class TypeTest {
 
     //calculate accuracy
     public double accuracy() {
-        //compare
         return 0.0;
     }
 
