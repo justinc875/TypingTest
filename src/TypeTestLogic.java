@@ -20,11 +20,19 @@ public class TypeTestLogic {
 
     //helper methods
     public void getInfo() {
-        System.out.println("type something: ");
+        System.out.println("Which test would you want to take?");
+        System.out.println("15 second test or 30 word test");
         info = scan.nextLine();
-        Watch s = new Watch();
-        Thread t = new Thread(s);
-        t.start();
+
+        //multiple if conditionals to load up whichever test user selects
+        /* if (info == ) {
+
+        }
+        if (info == ) {
+
+        } */
+
+        mainMenuStart();
     }
 
 
