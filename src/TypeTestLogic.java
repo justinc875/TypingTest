@@ -4,10 +4,12 @@ public class TypeTestLogic {
     //instance variables
     private Scanner scan;
     private String info;
+    private String start;
 
     //constructor
     public TypeTestLogic() {
         info = "";
+        start = "";
         scan = new Scanner(System.in);
     }
 
@@ -16,6 +18,12 @@ public class TypeTestLogic {
     public void start() {
         System.out.println("Welcome to the TypingTest");
         getInfo();
+    }
+
+    //getters and setters
+
+    public String getStart() {
+        return start;
     }
 
     //helper methods
@@ -33,6 +41,22 @@ public class TypeTestLogic {
         } */
 
         mainMenuStart();
+    }
+
+    //helper method
+    private void mainMenuStart() {
+        System.out.println("Input any character to start your test: ");
+        start = scan.nextLine();
+    }
+
+    //Watch s = new Watch();
+    //Thread t = new Thread(s);
+    //t.start();
+
+    //create type test object
+
+    public void printStats() {
+        System.out.println("printstats");
     }
 
 
