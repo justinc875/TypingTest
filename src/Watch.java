@@ -5,14 +5,13 @@ public class Watch implements Runnable {
     private String startSequence;
 
     //create type test logic object
-    TypeTestLogic info = new TypeTestLogic();
-//
-//    //call method
-//    info.getInfo();
+    TypeTestLogic info;
 
-    public Watch() {
+    public Watch(TypeTestLogic ttl) {
+        info = ttl;
         condition = false;
         startSequence = info.getStart();
+        startSequence();
     }
 
     //check if condition is true for false in order to start the thread
@@ -22,7 +21,7 @@ public class Watch implements Runnable {
         }
     }
 
-    //thread
+    //thread for timer
     @Override
     public void run() {
         while (condition) {
@@ -31,17 +30,16 @@ public class Watch implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println(x);
             x++;
-            //System.out.println("hello " + x);
+            System.out.println(x);
         }
 
     }
 
+
     public int getX() {
         return x;
     }
+
+
 }
-
-
-//create a object of TypeTestLogic

@@ -13,11 +13,14 @@ public class TypeTestLogic {
         scan = new Scanner(System.in);
     }
 
-
     //game loop
     public void start() {
         System.out.println("Welcome to the TypingTest");
         getInfo();
+        Watch s = new Watch(this);
+        Thread t = new Thread(s);
+        t.start();
+        System.out.println(s.getX());
     }
 
     //getters and setters
@@ -29,7 +32,7 @@ public class TypeTestLogic {
     //helper methods
     public void getInfo() {
         System.out.println("Which test would you want to take?");
-        System.out.println("15 second test or 30 word test");
+        System.out.print("15 second test or 30 word test");
         info = scan.nextLine();
 
         //multiple if conditionals to load up whichever test user selects
@@ -48,12 +51,6 @@ public class TypeTestLogic {
         System.out.println("Input any character to start your test: ");
         start = scan.nextLine();
     }
-
-    //Watch s = new Watch();
-    //Thread t = new Thread(s);
-    //t.start();
-
-    //create type test object
 
     public void printStats() {
         System.out.println("printstats");
