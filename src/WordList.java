@@ -17,6 +17,7 @@ public class WordList {
     }
 
     public void wordTest() {
+        //finds the amount of commas in the wordlist
         for (int i = 0; i < wordList.length(); i++) {
             if (wordList.substring(i, i+1).equals(",")) {
                 comma ++;
@@ -31,8 +32,12 @@ public class WordList {
         }
     }
 
-    //generate a random index
-    //find the closest comma
-    //nested loop, for loop transitioned into a while loop
-    //find the next closest comma and add the new word from those indices to a new string with the world.
+    //math.random used to see which comma will be indexed out
+    //parse commas out using indexof
+    //list gets updated, word that gets parsed removed from list
+    //word added to wordtest
+
+    /*if (wordList.substring(j, j + 1).equals(",")) {
+                count++;
+            }*/
 }

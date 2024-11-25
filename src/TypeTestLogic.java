@@ -13,6 +13,8 @@ public class TypeTestLogic {
         scan = new Scanner(System.in);
     }
 
+    
+
     //game loop
     public void start() {
         System.out.println("Welcome to the TypingTest");
@@ -31,18 +33,8 @@ public class TypeTestLogic {
 
     //helper methods
     public void getInfo() {
-        System.out.println("Which test would you want to take?");
-        System.out.print("15 second test or 30 word test");
+        System.out.println("15 second test");
         info = scan.nextLine();
-
-        //multiple if conditionals to load up whichever test user selects
-        /* if (info == ) {
-
-        }
-        if (info == ) {
-
-        } */
-
         mainMenuStart();
     }
 
@@ -52,8 +44,10 @@ public class TypeTestLogic {
         start = scan.nextLine();
     }
 
+
     public void printStats() {
-        System.out.println("printstats");
+        System.out.println("Good job!");
+        System.out.println("Your wpm is ");
     }
 
 

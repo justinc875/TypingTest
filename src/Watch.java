@@ -31,7 +31,7 @@ public class Watch implements Runnable {
                 throw new RuntimeException(e);
             }
             x++;
-            System.out.println(x);
+            System.out.println(x); //remove when timer works
         }
 
     }

@@ -11,7 +11,7 @@ public class TypeTest {
     public TypeTest(double timer, String typeTest) {
         this.timer = timer;
         this.typeTest = typeTest;
-        this.userInput = userInput;
+        this.userInput = userInput; //redundant, need to utilize
         accuracy = 0;
         rightCharacters = 0;
         wrongCharacters = 0;
@@ -28,7 +28,7 @@ public class TypeTest {
     //calculate wpm
     public double wpm() {
         getCharacters();
-        return (rightCharacters / 5) / timer;
+        return ((double) rightCharacters / 5) / timer;
     }
 
     public double accuracy() {
