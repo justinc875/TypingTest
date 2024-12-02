@@ -33,7 +33,7 @@ public class TypeTestLogic {
 
     //helper methods
     public void started() {
-        System.out.println("Type in \"A\" for a 15 word test or \"B\" for a 30 word test.");
+        System.out.print("Type in \"A\" for a 15 word test or \"B\" for a 30 word test: ");
         info = scan.nextLine();
         while (!(info.equals("A") || info.equals("B"))) {
             System.out.println("Please type in in the letter \"A\" for a 15 word test or the letter \"B\" for a 30 word test, please keep in mind the letters are case sensitive!");
@@ -42,19 +42,20 @@ public class TypeTestLogic {
         mainMenuStart();
     }
 
-    //helper methods
+    public void printStats() {
+        System.out.println("Good job!");
+        System.out.println("Your wpm is ");
+    }
+
     private void mainMenuStart() {
         System.out.println("Input any character to start your test: ");
         start = scan.nextLine();
         if (!(start.isEmpty())) { //intellij suggested to change this from .equals to .isEmpty
             testObject();
             System.out.println(wordTest);
+            userInput = scan.nextLine();
+            //create an object to use for print stats
         }
-    }
-
-    public void printStats() {
-        System.out.println("Good job!");
-        System.out.println("Your wpm is ");
     }
 
     private void testObject() {
