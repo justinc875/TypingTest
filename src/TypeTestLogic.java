@@ -13,7 +13,7 @@ public class TypeTestLogic {
         scan = new Scanner(System.in);
     }
 
-    
+
 
     //game loop
     public void start() {
@@ -32,9 +32,13 @@ public class TypeTestLogic {
     }
 
     //helper methods
-    public void getInfo() {
-        System.out.println("15 second test");
+    public void started() {
+        System.out.println("Type in \"A\" for a 15 word test or \"B\" for a 30 word test.");
         info = scan.nextLine();
+        while (!info.equals("A") || info.equals("B")) {
+            System.out.println("Please type in in the letter \"A\" for a 15 word test or the letter \"B\" for a 30 word test!");
+            info = scan.nextLine();
+        }
         mainMenuStart();
     }
 
