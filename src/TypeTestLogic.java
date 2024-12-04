@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TypeTestLogic {
@@ -54,16 +55,19 @@ public class TypeTestLogic {
         System.out.println("Input any character to start your test: ");
         start = scan.nextLine();
         if (!(start.isEmpty())) { //intellij suggested to change this from .equals to .isEmpty
-
             //start the timer:
             Watch s = new Watch(this);
             Thread t = new Thread(s);
             t.start();
-            System.out.println(s.getX());
-
             testObject();
+            System.out.println("Good luck!");
+            System.out.println("===============================================================");
             System.out.println(wordTest);
+            System.out.println("===============================================================");
             userInput = scan.nextLine();
+            if (!Objects.equals(userInput, "")) {
+                //refer to watch class to stop timer
+            }
             //create an object to use for print stats
         }
     }

@@ -1,7 +1,7 @@
 /**
  * This class handles the user input and calculates all necessary statistics
  *
- * @author Alex Wang
+ * @author Alex Wang and Justin Chen
  */
 public class TypeTest {
     /** The value obtained from timer in miliseconds */
