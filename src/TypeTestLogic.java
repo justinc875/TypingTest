@@ -5,12 +5,15 @@ public class TypeTestLogic {
     private Scanner scan;
     private String info;
     private String start;
+    private String wordTest;
+    private String userInput;
 
     //constructor
     public TypeTestLogic() {
         info = "";
         start = "";
         scan = new Scanner(System.in);
+        wordTest = "";
     }
 
 
@@ -18,17 +21,17 @@ public class TypeTestLogic {
     //game loop
     public void start() {
         System.out.println("Welcome to the TypingTest");
-        getInfo();
-        Watch s = new Watch(this);
-        Thread t = new Thread(s);
-        t.start();
-        System.out.println(s.getX());
+        started();
     }
 
     //getters and setters
 
     public String getStart() {
         return start;
+    }
+
+    public String getInfo() {
+        return info;
     }
 
     //helper methods
@@ -51,6 +54,13 @@ public class TypeTestLogic {
         System.out.println("Input any character to start your test: ");
         start = scan.nextLine();
         if (!(start.isEmpty())) { //intellij suggested to change this from .equals to .isEmpty
+
+            //start the timer:
+            Watch s = new Watch(this);
+            Thread t = new Thread(s);
+            t.start();
+            System.out.println(s.getX());
+
             testObject();
             System.out.println(wordTest);
             userInput = scan.nextLine();
@@ -59,9 +69,9 @@ public class TypeTestLogic {
     }
 
     private void testObject() {
-        WordList test = new WordList();
         if (info.equals("A") || info.equals("B")) {
-            test.generateLoop();
+            WordList test = new WordList();
+            test.generateLoop(info);
             test.generateWordTest();
             wordTest = test.getWordTest();
         }

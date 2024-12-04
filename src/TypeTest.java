@@ -1,14 +1,35 @@
+/**
+ * This class handles the user input and calculates all necessary statistics
+ *
+ * @author Alex Wang
+ */
 public class TypeTest {
-    //instance variables
+    /** The value obtained from timer in miliseconds */
     double timer;
+
+    /** The randomly generated type test */
     String typeTest;
+
+    /** The user input */
     String userInput;
+
+    /** The number of right characters comparing user input with the type test */
     int rightCharacters;
+
+    /** The number of wrong characters comparing user input with the type test */
     int wrongCharacters;
+
+    /** accuracy of the user input when comparing to the type test */
     double accuracy;
 
-    //constructor
-    public TypeTest(double timer, String typeTest) {
+    /**
+     * Instantiates a TypeTest object
+     *
+     * @param timer The timer
+     * @param typeTest The random type test
+     * @param userInput The user input
+     */
+    public TypeTest(double timer, String typeTest, String userInput) {
         this.timer = timer;
         this.typeTest = typeTest;
         this.userInput = userInput; //redundant, need to utilize
@@ -17,30 +38,63 @@ public class TypeTest {
         wrongCharacters = 0;
     }
 
-    //getters and setters;
-
-    //calculate raw wpm
+    /**
+     * Returns the raw WPM of the user
+     * <p>
+     * Calculates the raw WPM by obtaining the length of the user input string
+     * then dividing the length by the average word length
+     * then dividing the quotient by the number of seconds
+     *
+     * @return the rawWPM
+     */
     public double rawWPM() {
         int length = userInput.length();
-         return ((double) length / 5) / timer;
+        return ((double) length / 5) / timer;
     }
 
-    //calculate wpm
+    /**
+     * Returns the WPM of the user
+     * <p>
+     * Calculates the WPM by calling the getCharacters method to obtain the right and wrong characters
+     * Calls the rightCharacters variable and casts it into a double
+     * Divides rightCharacters by 5
+     * Divides the quotient by the number of seconds
+     *
+     * @return the WPM
+     */
     public double wpm() {
         getCharacters();
         return ((double) rightCharacters / 5) / timer;
     }
 
+    /**
+     * Returns the accuracy of the user
+     * <p>
+     * Calcualtes the accuracy by calling the getCharacters method to obtain the right and wrong characters
+     * Calls the rightCharacters variable and casts it into a double
+     * finds total characters by adding the rightCharacters and wrongCharacters
+     * divides the number of right characters by the total
+     *
+     * @return the accuracy
+     */
     public double accuracy() {
         getCharacters();
         return (double) rightCharacters / (rightCharacters + wrongCharacters);
     }
 
-
-    //private helper classes
+    /**
+     * Determines the number of right characters and wrong characters
+     * <p>
+     * The number of right and wrong characters are calculated by using a for loop
+     * to iterate through each individual character of user input, checking
+     * if the character at index i is equal to the character at index i
+     * of the typeTest string
+     * if they are equal then the character is considered right
+     * otherwise it is considered wrong
+     *
+     * updates the value of both instance variables
+     */
     private void getCharacters() {
-        int wrongCharacters = 0;
-        int rightCharacters = 0;
         for(int i = 0; i < userInput.length(); i++) {
             if (userInput.substring(i, i + 1).equals(typeTest.substring(i, i + 1))) {
                 rightCharacters++;
@@ -52,4 +106,3 @@ public class TypeTest {
 
 
 }
-
