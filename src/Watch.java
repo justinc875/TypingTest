@@ -17,7 +17,7 @@ public class Watch implements Runnable {
 
     //check if condition is true for false in order to start the thread
     private void startSequence() {
-        if (!startSequence.equals("")) {
+        if (!startSequence.isEmpty()) { //intellij suggested we change this from .equals to .isEmpty
             condition = true;
         }
         if (!info.equals((""))) {

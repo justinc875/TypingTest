@@ -8,6 +8,7 @@ public class TypeTestLogic {
     private String start;
     private String wordTest;
     private String userInput;
+    private int milliseconds;
 
     //constructor
     public TypeTestLogic() {
@@ -15,6 +16,7 @@ public class TypeTestLogic {
         start = "";
         scan = new Scanner(System.in);
         wordTest = "";
+        milliseconds = 0;
     }
 
 
@@ -46,19 +48,11 @@ public class TypeTestLogic {
         mainMenuStart();
     }
 
-    public void printStats() {
-        System.out.println("Good job!");
-        System.out.println("Your wpm is ");
-    }
-
     private void mainMenuStart() {
         System.out.println("Input any character to start your test: ");
         start = scan.nextLine();
-        if (!(start.isEmpty())) { //intellij suggested to change this from .equals to .isEmpty
-            //start the timer:
-            Watch s = new Watch(this);
-            Thread t = new Thread(s);
-            t.start();
+        if (!(start.isEmpty())) {//intellij suggested to change this from .equals to .isEmpty
+            startTimer();
             testObject();
             System.out.println("Good luck!");
             System.out.println("===============================================================");
@@ -66,7 +60,8 @@ public class TypeTestLogic {
             System.out.println("===============================================================");
             userInput = scan.nextLine();
             if (!Objects.equals(userInput, "")) {
-                //refer to watch class to stop timer
+                TypeTest dynamiteType = new TypeTest(milliseconds , wordTest, userInput);
+                dynamiteType.printStats();
             }
             //create an object to use for print stats
         }
@@ -79,6 +74,14 @@ public class TypeTestLogic {
             test.generateWordTest();
             wordTest = test.getWordTest();
         }
+    }
+
+    private void startTimer() {
+        //start the timer:
+        Watch s = new Watch(this);
+        Thread t = new Thread(s);
+        t.start();
+        milliseconds = s.getX();
     }
 
 }

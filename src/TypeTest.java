@@ -4,7 +4,7 @@
  * @author Alex Wang and Justin Chen
  */
 public class TypeTest {
-    /** The value obtained from timer in miliseconds */
+    /** The value obtained from timer in milliseconds */
     double timer;
 
     /** The randomly generated type test */
@@ -70,7 +70,7 @@ public class TypeTest {
     /**
      * Returns the accuracy of the user
      * <p>
-     * Calcualtes the accuracy by calling the getCharacters method to obtain the right and wrong characters
+     * Calculates the accuracy by calling the getCharacters method to obtain the right and wrong characters
      * Calls the rightCharacters variable and casts it into a double
      * finds total characters by adding the rightCharacters and wrongCharacters
      * divides the number of right characters by the total
@@ -79,7 +79,8 @@ public class TypeTest {
      */
     public double accuracy() {
         getCharacters();
-        return (double) rightCharacters / (rightCharacters + wrongCharacters);
+        double accuracyCurrent = 100 * ((double) rightCharacters / (rightCharacters + wrongCharacters));
+        return Math.round(accuracyCurrent * 100.0) / 100.0;
     }
 
     /**
@@ -91,18 +92,23 @@ public class TypeTest {
      * of the typeTest string
      * if they are equal then the character is considered right
      * otherwise it is considered wrong
-     *
      * updates the value of both instance variables
      */
     private void getCharacters() {
-        for(int i = 0; i < userInput.length(); i++) {
+        for (int i = 0; i < userInput.length(); i++) {
             if (userInput.substring(i, i + 1).equals(typeTest.substring(i, i + 1))) {
                 rightCharacters++;
             } else {
-                wrongCharacters ++;
+                wrongCharacters++;
             }
         }
     }
 
-
+    public void printStats() {
+        System.out.println("Good job!");
+        System.out.println("Your wpm is " + wpm());
+        System.out.println("Your raw wpm is " + rawWPM());
+        System.out.println("Your accuracy is " + accuracy() + "%");
+        System.out.println("Thanks for typing with us!");
+    }
 }

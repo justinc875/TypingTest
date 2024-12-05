@@ -9,5 +9,10 @@ public class TypeTestRunner {
         //if yes then generate a new prompt and immediately start the timer.
         //end the timer when user finishes typing 30 words.
         //save the time to a variable
+
+        //problems
+        //fix wpm
+        //fix accuracy
+        //fix out of bounds error.
     }
 }
