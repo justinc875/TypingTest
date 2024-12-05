@@ -106,6 +106,7 @@ public class TypeTest {
 
     public void printStats() {
         System.out.println("Good job!");
+        System.out.println("The time you took to type was " + timer + "!");
         System.out.println("Your wpm is " + wpm());
         System.out.println("Your raw wpm is " + rawWPM());
         System.out.println("Your accuracy is " + accuracy() + "%");

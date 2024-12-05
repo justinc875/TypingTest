@@ -13,6 +13,6 @@ public class TypeTestRunner {
         //problems
         //fix wpm
         //fix accuracy
-        //fix out of bounds error.
+        //fix out of bounds error //if user goes out of bounds use a for loop to check how many characters are out of bound and add that into the wrongchars variable
     }
 }

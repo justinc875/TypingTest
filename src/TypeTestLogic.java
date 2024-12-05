@@ -8,15 +8,19 @@ public class TypeTestLogic {
     private String start;
     private String wordTest;
     private String userInput;
-    private int milliseconds;
+    private double seconds;
+    private Watch s;
+    private Thread t;
 
     //constructor
     public TypeTestLogic() {
         info = "";
         start = "";
         scan = new Scanner(System.in);
+        s = new Watch(this);
+        t = new Thread(s);
         wordTest = "";
-        milliseconds = 0;
+        seconds = 0;
     }
 
 
@@ -59,8 +63,10 @@ public class TypeTestLogic {
             System.out.println(wordTest);
             System.out.println("===============================================================");
             userInput = scan.nextLine();
+            int milliseconds = s.getX();
+            seconds = (double) milliseconds / 1000;
             if (!Objects.equals(userInput, "")) {
-                TypeTest dynamiteType = new TypeTest(milliseconds , wordTest, userInput);
+                TypeTest dynamiteType = new TypeTest(seconds , wordTest, userInput);
                 dynamiteType.printStats();
             }
             //create an object to use for print stats
@@ -76,12 +82,13 @@ public class TypeTestLogic {
         }
     }
 
-    private void startTimer() {
+    public void startTimer() {
         //start the timer:
-        Watch s = new Watch(this);
-        Thread t = new Thread(s);
+        /*Watch s = new Watch(this);
+        Thread t = new Thread(s);*/
         t.start();
-        milliseconds = s.getX();
+        /*int milliseconds = s.getX();
+        seconds = (double) milliseconds / 1000; */
     }
 
 }
