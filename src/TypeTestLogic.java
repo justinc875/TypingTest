@@ -27,7 +27,9 @@ public class TypeTestLogic {
 
     //game loop
     public void start() {
+        System.out.println("===============================================================");
         System.out.println("Welcome to the TypingTest");
+        System.out.println("===============================================================");
         started();
     }
 
@@ -61,6 +63,7 @@ public class TypeTestLogic {
             System.out.println("Please type in in the letter \"A\" for a 15 word test or the letter \"B\" for a 30 word test, please keep in mind the letters are case sensitive!");
             info = scan.nextLine();
         }
+        System.out.println("===============================================================");
         mainMenuStart();
     }
 
@@ -72,7 +75,7 @@ public class TypeTestLogic {
             s.startSequence();
             testObject();
 
-           System.out.println("Good luck!");
+            System.out.println("Good luck!");
             System.out.println("===============================================================");
             System.out.println(wordTest);
             System.out.println("===============================================================");
