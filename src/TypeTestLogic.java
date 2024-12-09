@@ -23,8 +23,6 @@ public class TypeTestLogic {
         seconds = 0;
     }
 
-
-
     //game loop
     public void start() {
         System.out.println("===============================================================");
@@ -34,7 +32,6 @@ public class TypeTestLogic {
     }
 
     //getters and setters
-
     public String getStart() {
         return start;
     }
@@ -102,6 +99,4 @@ public class TypeTestLogic {
             wordTest = test.getWordTest();
         }
     }
-
-
 }

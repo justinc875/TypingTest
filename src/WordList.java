@@ -11,6 +11,13 @@ public class WordList {
         counter = 0;
     }
 
+    //overloaded constructor that allows for custom wordList
+    public WordList(String wordListCustom) {
+        wordList = wordListCustom;
+        wordTest = "";
+        counter = 0;
+    }
+
     // Getter for the word list
     public String getWordList() {
         return wordList;
@@ -25,6 +32,10 @@ public class WordList {
         }
     }
 
+    // Overloaded method that allows user to generate a word list with a custom amount of words.
+    public void generateLoop(int wordCount) {
+        counter = wordCount;
+    }
 
     // Generates a random list of 15 words
     public void generateWordTest() {

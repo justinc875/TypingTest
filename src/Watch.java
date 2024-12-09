@@ -16,11 +16,11 @@ public class Watch implements Runnable {
 
     //check if condition is true for false in order to start the thread
     public void startSequence() {
-            condition = true;
+        condition = true;
     }
 
     public void stopSequence() {
-            condition = false;
+        condition = false;
     }
 
     //thread for timer
