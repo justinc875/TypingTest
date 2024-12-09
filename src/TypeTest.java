@@ -5,22 +5,22 @@
  */
 public class TypeTest {
     /** The value obtained from timer in milliseconds */
-    private double timer;
+    double timer;
 
     /** The randomly generated type test */
-    private String typeTest;
+    String typeTest;
 
     /** The user input */
-    private String userInput;
+    String userInput;
 
     /** The number of right characters comparing user input with the type test */
-    private int rightCharacters;
+    int rightCharacters;
 
     /** The number of wrong characters comparing user input with the type test */
-    private int wrongCharacters;
+    int wrongCharacters;
 
     /** accuracy of the user input when comparing to the type test */
-    private double accuracy;
+    double accuracy;
 
     /**
      * Instantiates a TypeTest object
@@ -97,32 +97,15 @@ public class TypeTest {
      * updates the value of both instance variables
      */
     private void getCharacters() {
-        int minLength;
-
-        if (userInput.length() < typeTest.length()) {
-            minLength = userInput.length();
-        } else {
-            minLength = typeTest.length();
-        }
-
-        for (int i = 0; i < minLength; i++) {
-            if (userInput.charAt(i) == typeTest.charAt(i)) {
+        for (int i = 0; i < userInput.length(); i++) {
+            if (userInput.substring(i, i + 1).equals(typeTest.substring(i, i + 1))) {
                 rightCharacters++;
             } else {
                 wrongCharacters++;
             }
         }
-
-        if (userInput.length() > typeTest.length()) {
-            wrongCharacters += userInput.length() - typeTest.length();
-        }
     }
 
-    /**
-     * Prints the user's stats upon completion
-     * <p>
-     * Added logic to determine dynamite status
-     */
     public void printStats() {
         boolean wpmTrue;
         System.out.println("Good job!");
